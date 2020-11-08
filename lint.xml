@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- http://tools.android.com/tips/lint-checks -->
+<lint>
+    <issue id="UnusedResources" severity="error">
+        <!-- Looks like the google gms gradle plugin generated some unused resources -->
+        <ignore path="**/generated/**"/>
+    </issue>
+    <issue id="ParcelClassLoader" severity="error"/>
+    <issue id="HardcodedText" severity="error"/>
+    <issue id="HardwareIds" severity="error"/>
+    <issue id="DefaultLocale" severity="error"/>
+    <issue id="CheckResult" severity="error"/>
+    <issue id="ObsoleteSdkInt" severity="error"/>
+    <issue id="VisibleForTests" severity="error"/>
+    <issue id="IconDipSize" severity="error"/>
+    <issue id="IconDuplicatesConfig" severity="error"/>
+    <issue id="IconDensities" severity="error"/>
+    <issue id="ObsoleteLayoutParam" severity="error"/>
+    <issue id="InefficientWeight" severity="error"/>
+    <issue id="RtlHardcoded" severity="error"/>
+    <issue id="InvalidPackage" severity="error">
+        <ignore regexp="okio-.*jar"/>
+        <ignore regexp="retrofit-.*.jar"/>
+        <ignore regexp=".*rhino.*"/>
+        <ignore path="**/java-common-*.jar"/>
+    </issue>
+    <issue id="SetTextI18n" severity="error"/>
+    <issue id="TypographyEllipsis" severity="error"/>
+    <issue id="SimpleDateFormat" severity="error"/>
+    <issue id="ThrowableNotAtBeginning" severity="error"/>
+    <issue id="BinaryOperationInTimber" severity="error"/>
+    <issue id="LogNotTimber" severity="error"/>
+    <!-- LintBaseline is a warning because it is inconsistent -->
+    <issue id="LintBaseline" severity="warning"/>
+    <issue id="StringFormatInTimber" severity="error"/>
+    <issue id="RtlSymmetry" severity="error"/>
+    <issue id="ThrowableNotAtBeginning" severity="error"/>
+    <issue id="TimberExceptionLogging" severity="error"/>
+    <issue id="Typos" severity="error"/>
+    <issue id="UnusedNamespace" severity="error"/>
+    <issue id="ScrollViewSize" severity="error"/>
+    <issue id="DuplicateIncludedIds" severity="error"/>
+    <issue id="InflateParams" severity="error"/>
+    <issue id="MissingId" severity="error"/>
+    <issue id="PluralsCandidate" severity="error"/>
+    <issue id="RelativeOverlap" severity="error"/>
+    <issue id="Deprecated" severity="error"/>
+    <issue id="WifiManagerPotentialLeak" severity="error"/>
+    <issue id="GradleCompatible" severity="warning"/>
+    <issue id="MissingConstraints" severity="warning"/>
+</lint>
