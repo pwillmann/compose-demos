@@ -1,4 +1,4 @@
-package pwillmann.banking.android.ui.home
+package pwillmann.banking.android.ui.legacy
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi

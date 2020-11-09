@@ -128,11 +128,11 @@ class AccountRepository {
         val currentMoment: Instant = Clock.System.now()
         val systemTZ = TimeZone.currentSystemDefault()
 
-        val randomMoment = currentMoment.apply {
-            this.plus(-(Random.double() * dayOffset).roundToInt(), DateTimeUnit.DAY, systemTZ)
-            this.plus((Random.double() * 24).roundToInt(), DateTimeUnit.HOUR, systemTZ)
-            this.plus((Random.double() * 60).roundToInt(), DateTimeUnit.MINUTE, systemTZ)
-        }
+        val randomMoment = currentMoment
+            .plus(-(Random.double() * dayOffset).roundToInt(), DateTimeUnit.DAY, systemTZ)
+            .plus((Random.double() * 24).roundToInt(), DateTimeUnit.HOUR, systemTZ)
+            .plus((Random.double() * 60).roundToInt(), DateTimeUnit.MINUTE, systemTZ)
+
         return randomMoment.toLocalDateTime(systemTZ)
     }
 }

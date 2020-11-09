@@ -1,4 +1,4 @@
-package pwillmann.banking.android.ui.home
+package pwillmann.banking.android.ui.legacy
 
 import android.content.Context
 import android.content.res.Resources

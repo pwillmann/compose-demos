@@ -1,4 +1,4 @@
-package pwillmann.banking.android.ui.home
+package pwillmann.banking.android.ui.legacy
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.Text

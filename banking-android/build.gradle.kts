@@ -32,6 +32,17 @@ android {
             isDebuggable = true
         }
     }
+    flavorDimensions("version")
+    productFlavors {
+        create("jetbrains") {
+            applicationIdSuffix = ".jetbrains"
+            versionNameSuffix = "-jetbrains"
+        }
+        create("jetpack") {
+            applicationIdSuffix = ".jetpack"
+            versionNameSuffix = "-jetpack"
+        }
+    }
 
     bundle {
         language {
@@ -49,6 +60,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(Dependencies.Common.kotlinStdlib)
     implementation(project(":banking-common-data"))
+    "jetbrainsImplementation"(project(":banking-common-compose"))
 
     // [ANDROIDX-MATERIAL]
     implementation(Dependencies.Android.AndroidX.activity)
@@ -58,12 +70,12 @@ dependencies {
     implementation(Dependencies.Android.AndroidX.fragment)
 
     // [Compose]
-    implementation(Dependencies.Android.Compose.ui)
-    implementation(Dependencies.Android.Compose.uiTooling)
-    implementation(Dependencies.Android.Compose.foundation)
-    implementation(Dependencies.Android.Compose.runtime)
-    implementation(Dependencies.Android.Compose.livedata)
-    implementation(Dependencies.Android.Compose.material)
+    "jetpackImplementation"(Dependencies.Android.Compose.ui)
+    "jetpackImplementation"(Dependencies.Android.Compose.uiTooling)
+    "jetpackImplementation"(Dependencies.Android.Compose.foundation)
+    "jetpackImplementation"(Dependencies.Android.Compose.runtime)
+    "jetpackImplementation"(Dependencies.Android.Compose.livedata)
+    "jetpackImplementation"(Dependencies.Android.Compose.material)
 
     // [TOOLS]
     implementation(Dependencies.Android.timber)

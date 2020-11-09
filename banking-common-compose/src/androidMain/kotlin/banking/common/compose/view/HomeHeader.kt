@@ -1,7 +1,5 @@
-package pwillmann.banking.android.ui.home
+package banking.common.compose.view
 
-import androidx.compose.foundation.Icon
-import androidx.compose.foundation.Text
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -15,10 +13,11 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.AmbientEmphasisLevels
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.ProvideEmphasis
 import androidx.compose.material.Surface
-import androidx.compose.material.contentColorFor
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Lock
@@ -31,12 +30,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.VectorAsset
 import androidx.compose.ui.platform.AnimationClockAmbient
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
+import banking.common.compose.ui.common.Pager
+import banking.common.compose.ui.common.PagerState
+import banking.common.compose.ui.home.BankCard
+import banking.common.compose.ui.theme.ThemeOpacity
 import banking.common.data.model.Account
-import pwillmann.banking.android.theme.ThemeOpacity
-import pwillmann.banking.android.ui.common.Pager
-import pwillmann.banking.android.ui.common.PagerState
-import timber.log.Timber
 
 @Composable
 fun HomeHeader(
@@ -45,7 +43,7 @@ fun HomeHeader(
 ) {
     Surface(
         color = MaterialTheme.colors.primary,
-        contentColor = contentColorFor(color = MaterialTheme.colors.primary)
+        contentColor = MaterialTheme.colors.onPrimary
     ) {
         Column(modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(16.dp)) {
             Text(
@@ -64,7 +62,6 @@ fun HomeHeader(
     }
 }
 
-@Preview
 @Composable
 fun AccountActions(modifier: Modifier = Modifier) {
     Row(modifier = modifier, horizontalArrangement = Arrangement.SpaceBetween) {
@@ -119,7 +116,6 @@ fun CardPager(
 ) {
     pagerState.maxPage = (items.size - 1).coerceAtLeast(0)
     pagerState.onPageSelected = {
-        Timber.d("CardPager onPageSelected $it")
         onAccountSelected(items[it])
     }
 
