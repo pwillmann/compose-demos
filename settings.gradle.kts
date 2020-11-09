@@ -18,4 +18,4 @@ gradleEnterprise {
         publishAlways()
     }
 }
-include(":banking-common-data", ":banking-android", ":banking-common-compose")
+include(":banking-common-data", ":banking-common-compose", ":banking-android",":banking-desktop")
