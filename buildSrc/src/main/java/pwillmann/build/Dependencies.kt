@@ -30,12 +30,6 @@ object Dependencies {
             const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
             const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
 
-            object CameraX {
-                const val core = "androidx.camera:camera-core:${Versions.camerax}"
-                const val camera2 = "androidx.camera:camera-camera2:${Versions.camerax}"
-                const val lifecycle = "androidx.camera:camera-lifecycle:${Versions.camerax}"
-                const val view = "androidx.camera:camera-view:${Versions.camerax_view}"
-            }
 
         }
 

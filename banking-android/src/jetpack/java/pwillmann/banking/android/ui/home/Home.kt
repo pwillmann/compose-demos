@@ -14,9 +14,6 @@ import androidx.ui.tooling.preview.Preview
 import banking.common.data.repository.AccountRepository
 import kotlin.time.ExperimentalTime
 import pwillmann.banking.android.theme.BankingTheme
-import pwillmann.banking.android.ui.legacy.AccountHistory
-import pwillmann.banking.android.ui.legacy.HomeHeader
-import pwillmann.banking.android.ui.legacy.Transactions
 
 @OptIn(ExperimentalTime::class)
 @Preview

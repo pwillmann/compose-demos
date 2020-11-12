@@ -1,11 +1,10 @@
-package pwillmann.banking.android.ui.legacy
+package pwillmann.banking.android.ui.home
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.Text
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ConstraintLayout
@@ -14,13 +13,15 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.CornerSize
-import androidx.compose.material.AmbientEmphasisLevels
+import androidx.compose.material.AmbientContentAlpha
 import androidx.compose.material.Card
+import androidx.compose.material.ContentAlpha
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.ProvideEmphasis
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.material.contentColorFor
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Providers
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -77,7 +78,7 @@ fun Transactions(transactions: List<AccountTransaction>) {
                             ),
                             initiallyVisible = false
                         ) {
-                            ProvideEmphasis(emphasis = AmbientEmphasisLevels.current.medium) {
+                            Providers(AmbientContentAlpha provides ContentAlpha.medium) {
                                 Text(
                                     formatDateOfYear(localDate),
                                     style = MaterialTheme.typography.subtitle1,
@@ -143,7 +144,7 @@ fun AccountTransaction(
                     top.linkTo(parent.top, margin = 8.dp)
                 }
             )
-            ProvideEmphasis(emphasis = AmbientEmphasisLevels.current.medium) {
+            Providers(AmbientContentAlpha provides ContentAlpha.medium) {
                 Subtitle(
                     transaction,
                     modifier = Modifier.constrainAs(subtitle) {
@@ -162,7 +163,7 @@ fun AccountTransaction(
                     top.linkTo(title.top)
                 }
             )
-            ProvideEmphasis(emphasis = AmbientEmphasisLevels.current.medium) {
+            Providers(AmbientContentAlpha provides ContentAlpha.medium) {
                 Text(
                     transaction.date.toJavaLocalDateTime().printTime(),
                     style = MaterialTheme.typography.caption,
